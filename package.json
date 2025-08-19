@@ -1,0 +1,20 @@
+{
+  "name": "beever",
+  "version": "1.0.0",
+  "description": "Multiplataforma disciplinar educacional financeira para jovens crianças (Protótipo)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Breno-Gus/Beever.git"
+  },
+  "keywords": [],
+  "author": "Breno Gustavo, Vinícius Duarte, Vinícius Santana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Breno-Gus/Beever/issues"
+  },
+  "homepage": "https://github.com/Breno-Gus/Beever#readme"
+}

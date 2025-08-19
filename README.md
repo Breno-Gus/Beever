@@ -1,4 +1,4 @@
-# Beeaver
+# Beever
 Multiplataforma disciplinar educacional financeira para jovens crianças (Protótipo)
 
 # 🐝 Beever - Sistema de Aprendizado em Educação Financeira
