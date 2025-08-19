@@ -1,13 +1,40 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./output.css" rel="stylesheet">
+  <title>Lista de Usuários</title>
+  <link href="../css/output.css" rel="stylesheet">
 </head>
+
 <body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+  <h1>Usuários Cadastrados</h1>
+  <ul id="userList">
+    <!-- Usuários aparecerão aqui -->
+  </ul>
+
+  <script>
+    async function fetchUsers() {
+      try {
+        const response = await fetch('http://localhost:3001/api/users');
+        const users = await response.json();    // precisa do await
+
+        const listElement = document.getElementById('userList');
+        listElement.innerHTML = ''; // limpa lista antes de popular
+
+        users.forEach(user => {
+          const li = document.createElement('li');
+          li.textContent = user.nome; // campo da tabela Usuario
+          listElement.appendChild(li);
+        });
+      } catch (error) {
+        console.error('Erro ao buscar usuários:', error);
+      }
+    }
+
+    fetchUsers(); // chama a função ao carregar a página
+  </script>
 </body>
+
 </html>
