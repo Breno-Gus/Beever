@@ -13,6 +13,7 @@ app.use(cors());
 app.use(cors({
   origin: 'http://localhost:3000'
 }));
+app.use('/css', express.static(path.join(__dirname, 'frontend/css')));
 app.set('views', path.join(__dirname, 'frontend/views'));
 app.set('view engine', 'ejs');
 
@@ -21,8 +22,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use(express.static(path.join(__dirname, 'frontend')));
+app.use(express.static(path.join(__dirname, 'frontend/public')));
 app.use(express.static(path.join(__dirname, 'backend/public')));
+
+app.get("/cadastro", (req, res) => { res.render("cadastro"); });
+app.get("/login", (req, res) => { res.render("login"); });
+
+// Rotas
+app.use('/', indexRouter);
 
 // Rotas
 app.use('/', indexRouter);
