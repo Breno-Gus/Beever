@@ -6,6 +6,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./backend/routes/index');
 const userRouters = require('./backend/routes/userRouters');
+const partialRouter = express.Router();
 
 const app = express();
 const cors = require('cors');
@@ -27,13 +28,16 @@ app.use(express.static(path.join(__dirname, 'backend/public')));
 
 app.get("/cadastro", (req, res) => { res.render("cadastro"); });
 app.get("/login", (req, res) => { res.render("login"); });
+app.get("/home", (req, res) => { res.render("home"); });
 
-// Rotas
-app.use('/', indexRouter);
+partialRouter.get("/perfil", (req, res) => { res.render("partials/perfil"); });
+partialRouter.get("/loja", (req, res) => { res.render("partials/loja"); });
+partialRouter.get("/config", (req, res) => { res.render("partials/config"); });
 
 // Rotas
 app.use('/', indexRouter);
 app.use('/api/users', userRouters); // GET /api/users/ → lista usuários
+app.use('/', partialRouter);
 
 // Catch 404
 app.use(function (req, res, next) {
