@@ -29,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'backend/public')));
 app.get("/cadastro", (req, res) => { res.render("cadastro"); });
 app.get("/login", (req, res) => { res.render("login"); });
 app.get("/home", (req, res) => { res.render("home"); });
+app.get("/test", (req, res) => { res.render("test"); });
 
 partialRouter.get("/perfil", (req, res) => { res.render("partials/perfil"); });
 partialRouter.get("/loja", (req, res) => { res.render("partials/loja"); });
