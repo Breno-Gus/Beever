@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 const indexRouter = require('./backend/routes/index');
-const userRouters = require('./backend/routes/userRouters');
+const userRouters = require('./backend/routes/users');
 const partialRouter = express.Router();
 
 const app = express();
