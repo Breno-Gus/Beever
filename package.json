@@ -4,9 +4,9 @@
   "description": "Multiplataforma disciplinar educacional financeira para jovens crianças (Protótipo)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:css": "npx tailwindcss -i ./src/frontend/src/input.css -o ./src/frontend/public/style.css --watch",
-    "dev": "nodemon ./src/backend/bin/www.js"
+    "start": "node backend/bin/www",
+    "dev:css": "tailwindcss -i ./frontend/css/input.css -o ./frontend/public/style.css --watch",
+    "dev": "concurrently \"nodemon ./backend/bin/www\" \"npm run dev:css\""
   },
   "repository": {
     "type": "git",
