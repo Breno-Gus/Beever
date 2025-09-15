@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/Breno-Gus/Beever/issues"
   },
-  "homepage": "https://github.com/Breno-Gus/Beever#readme"
+  "homepage": "https://github.com/Breno-Gus/Beever#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "tailwindcss": "^4.1.13"
+  }
 }
