@@ -8,6 +8,8 @@ const indexRouter = require('./backend/routes/index');
 const userRouters = require('./backend/routes/users');
 const partialRouter = express.Router();
 
+const UserController = require('./backend/controllers/UserController')
+
 const app = express();
 const cors = require('cors');
 app.use(cors());
@@ -25,6 +27,7 @@ app.use(cookieParser());
 
 app.use(express.static(path.join(__dirname, 'frontend/public')));
 app.use(express.static(path.join(__dirname, 'backend/public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get("/cadastro", (req, res) => { res.render("cadastro"); });
 app.get("/login", (req, res) => { res.render("login"); });
